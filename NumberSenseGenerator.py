@@ -8,6 +8,7 @@ test = open('test.tex','w')
 lst = []
 ansblk = "\_\_\_\_\_\_\_\_\_\_"
 
+#####################   Begin Trick Definitions     #####################
 def foil ():
     a = random.randint(16, 99)
     b = random.randint(16, 99)
@@ -88,6 +89,8 @@ def divisors ():
     str1 = "No. of%s divisors of %d? %s" % (prop, num, ansblk)
     str2 = "%d" % (sum)
     return [str1, str2]
+#####################   End of Trick Definitions    ##################### 
+
 
 for i in range(0,numQuestions):
     lst.append(random.randint(0,numTricks-1))
@@ -102,6 +105,7 @@ test.write('\\begin{enumerate}\n')
 
 st = ""
 
+###### Question Iterator ######
 for i in range(0,numQuestions):
     j = random.randint(0, len(lst))
     k = lst.pop()
