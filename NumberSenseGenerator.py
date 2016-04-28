@@ -95,7 +95,7 @@ def mixedNumToImp ():
     b = random.randint(2,11)
     c = random.randint(1,a-1)
     str1 = "Convert to improper $%d\\frac{%d}{%d}$%s" % (b, c, a, ansblk)
-    str2 = "$\\frac{%d}{%d}$" % (b * c, a)
+    str2 = "$\\frac{%d}{%d}$" % (b*a+c, a)
     return [str1, str2]
 #####################   End of Trick Definitions    ##################### 
 
