@@ -2,7 +2,7 @@ import random
 
 ################### HERE ARE THE IMPORTANT CONSTANT DEFINITIONS #####################
 numQuestions = 80
-numTricks = 5
+numTricks = 6
 
 test = open('test.tex','w')
 lst = []
@@ -89,6 +89,14 @@ def divisors ():
     str1 = "No. of%s divisors of %d? %s" % (prop, num, ansblk)
     str2 = "%d" % (sum)
     return [str1, str2]
+
+def mixedNumToImp ():
+    a = random.randint(3,9)
+    b = random.randint(2,11)
+    c = random.randint(1,a-1)
+    str1 = "Convert to improper $%d\\frac{%d}{%d}$%s" % (b, c, a, ansblk)
+    str2 = "$\\frac{%d}{%d}$" % (b * c, a)
+    return [str1, str2]
 #####################   End of Trick Definitions    ##################### 
 
 
@@ -132,6 +140,11 @@ for i in range(0,numQuestions):
         st = st + temp
     elif k == 4:
         arr = divisors()
+        test.write(arr[0])
+        temp = "\\item %s \\\\ \n" % (arr[1])
+        st = st + temp
+    elif k == 5:
+        arr = mixedNumToImp()
         test.write(arr[0])
         temp = "\\item %s \\\\ \n" % (arr[1])
         st = st + temp
